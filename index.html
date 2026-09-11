@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FINVERO — Data Privacy & Transparency</title>
+
+  <meta
+    name="description"
+    content="FINVERO Data Privacy & Transparency — Learn how FINVERO collects, stores, processes, protects, and manages your personal and financial information."
+  >
+
+  <meta name="theme-color" content="#f8fafc">
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --surface-soft: #f1f5f9;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --success: #059669;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family:
+        "Plus Jakarta Sans",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .topbar {
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .topbar-inner {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-width: 0;
+    }
+
+    .brand-name {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      color: var(--text);
+    }
+
+    .brand-tagline {
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+
+    .version {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    main {
+      width: min(920px, calc(100% - 32px));
+      margin: 42px auto 70px;
+    }
+
+    .hero {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 42px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--success);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 46px);
+      line-height: 1.15;
+      letter-spacing: -1.4px;
+    }
+
+    .hero-subtitle {
+      margin: 14px 0 0;
+      color: var(--text-secondary);
+      font-size: 17px;
+      max-width: 760px;
+    }
+
+    .meta {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .transparency-box {
+      margin-top: 24px;
+      padding: 17px 18px;
+      border: 1px solid #bfdbfe;
+      background: #eff6ff;
+      border-radius: 15px;
+      color: #1e3a8a;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 16px;
+      box-shadow: 0 5px 20px rgba(15, 23, 42, 0.025);
+    }
+
+    .section-number {
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+    }
+
+    h3 {
+      margin: 26px 0 8px;
+      font-size: 17px;
+      line-height: 1.4;
+    }
+
+    p {
+      margin: 10px 0;
+      color: var(--text-secondary);
+    }
+
+    ul {
+      margin: 12px 0 16px;
+      padding-left: 22px;
+      color: var(--text-secondary);
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .highlight {
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .service-card {
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 18px;
+      margin-top: 14px;
+    }
+
+    .service-card strong {
+      display: block;
+      color: var(--text);
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .service-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .not-used {
+      background: #f8fafc;
+      border-left: 4px solid var(--success);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-top: 16px;
+    }
+
+    .not-used p {
+      margin: 0;
+    }
+
+    .contact-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      margin-top: 18px;
+    }
+
+    .contact-row {
+      margin: 7px 0;
+      color: var(--text-secondary);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 10px 20px 50px;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .footer-brand {
+      color: var(--text);
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .footer-links {
+      margin: 12px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+    }
+
+    @media (max-width: 700px) {
+      .topbar-inner {
+        min-height: 64px;
+      }
+
+      .brand-tagline {
+        display: none;
+      }
+
+      main {
+        width: min(100% - 22px, 920px);
+        margin-top: 18px;
+      }
+
+      .hero {
+        padding: 27px 21px;
+        border-radius: 19px;
+      }
+
+      .section {
+        padding: 23px 20px;
+        border-radius: 17px;
+      }
+
+      h2 {
+        font-size: 21px;
+      }
+
+      .hero-subtitle {
+        font-size: 15px;
+      }
+
+      .version {
+        font-size: 11px;
+        padding: 5px 9px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="topbar-inner">
+
+      <div class="brand">
+        <div class="brand-name">FINVERO</div>
+        <div class="brand-tagline">
+          Smarter Money. Better Life.
+        </div>
+      </div>
+
+      <div class="version">
+        v1.0.0
+      </div>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="eyebrow">
+        Data Privacy & Transparency
+      </div>
+
+      <h1>
+        FINVERO Privacy Architecture
+      </h1>
+
+      <p class="hero-subtitle">
+        At FINVERO, your financial privacy is fundamental.
+        This policy transparently explains what data is collected,
+        how it is stored and processed, what services are integrated,
+        and the controls you have over your personal information.
+      </p>
+
+      <div class="meta">
+        <span><strong>Version:</strong> 1.0.0</span>
+        <span><strong>Effective:</strong> September 6, 2026</span>
+        <span><strong>Updated:</strong> September 6, 2026</span>
+      </div>
+
+      <div class="transparency-box">
+        Zero third-party advertising trackers or data brokers.
+      </div>
+
+    </section>
+
+
+    <!-- SECTION 1 -->
+    <section class="section">
+
+      <div class="section-number">01 · Information</div>
+
+      <h2>
+        Information We Collect
+      </h2>
+
+      <p>
+        FINVERO collects only the information necessary to provide
+        personal finance tracking, budget calculations, financial
+        organization, and everyday money-management features.
+      </p>
+
+      <h3>
+        Account Information
+      </h3>
+
+      <p>
+        When you create and use an account, FINVERO may process
+        account-related information such as:
+      </p>
+
+      <ul>
+        <li>Email address</li>
+        <li>Display name</li>
+        <li>Authentication-related identifiers</li>
+      </ul>
+
+      <p>
+        Authentication is securely managed through
+        <span class="highlight">Firebase Authentication</span>.
+      </p>
+
+      <h3>
+        Financial Data & Transactions
+      </h3>
+
+      <p>
+        FINVERO processes financial information that you voluntarily
+        enter into the application, which may include:
+      </p>
+
+      <ul>
+        <li>Income records</li>
+        <li>Monthly salary configurations</li>
+        <li>Expense records</li>
+        <li>Transaction categories</li>
+        <li>Payment methods</li>
+        <li>Transaction dates and times</li>
+        <li>Transaction descriptions or notes</li>
+        <li>Savings information</li>
+        <li>Savings goals</li>
+        <li>Debt information</li>
+        <li>Lending information</li>
+        <li>Budget information</li>
+        <li>Recurring payment schedules</li>
+      </ul>
+
+      <p>
+        Payment method selections may include options such as
+        Cash, bKash, Nagad, Rocket, Bank, or Cards where supported
+        by the application.
+      </p>
+
+      <h3>
+        App Preferences & Local Cache
+      </h3>
+
+      <p>
+        FINVERO may store certain application preferences and
+        locally cached information on your device to provide a
+        responsive and reliable experience.
+      </p>
+
+      <ul>
+        <li>Selected currency</li>
+        <li>Budget warning preferences</li>
+        <li>Reminder preferences</li>
+        <li>Notification-related preferences</li>
+        <li>Offline/pending synchronization data</li>
+        <li>Other application settings</li>
+      </ul>
+
+    </section>
+
+
+    <!-- SECTION 2 -->
+    <section class="section">
+
+      <div class="section-number">02 · Usage</div>
+
+      <h2>
+        How We Use Your Information
+      </h2>
+
+      <p>
+        Information processed by FINVERO is used primarily to
+        provide, maintain, secure, and improve the application's
+        financial-management functionality.
+      </p>
+
+      <h3>
+        Financial Calculations
+      </h3>
+
+      <p>
+        Financial records may be used to calculate wallet balances,
+        income and expense summaries, cash flow, category spending
+        breakdowns, savings progress, budgets, lending balances,
+        debt balances, and related financial summaries.
+      </p>
+
+      <h3>
+        Safeguards & Alerts
+      </h3>
+
+      <p>
+        FINVERO may use your financial records and preferences to
+        provide budget warnings, balance-related safeguards,
+        recurring payment reminders, and other application
+        notifications.
+      </p>
+
+      <h3>
+        Access Security
+      </h3>
+
+      <p>
+        FINVERO uses authenticated access controls and database
+        security mechanisms designed to ensure that your financial
+        documents are accessible only to the authorized account.
+      </p>
+
+      <h3>
+        Service Reliability
+      </h3>
+
+      <p>
+        Technical and diagnostic information may be processed to
+        identify crashes, performance problems, synchronization
+        failures, and other technical issues that affect the
+        reliability of FINVERO.
+      </p>
+
+    </section>
+
+
+    <!-- SECTION 3 -->
+    <section class="section">
+
+      <div class="section-number">03 · Integrations</div>
+
+      <h2>
+        Third-Party Services & Integrations
+      </h2>
+
+      <p>
+        FINVERO utilizes industry-standard cloud infrastructure and
+        supporting services to provide authentication, database,
+        synchronization, notifications, analytics, diagnostics,
+        and application performance capabilities where enabled.
+      </p>
+
+      <div class="service-card">
+
+        <strong>
+          Google Firebase — Authentication & Cloud Firestore
+        </strong>
+
+        <p>
+          Firebase Authentication manages user authentication and
+          account sessions. Cloud Firestore provides cloud database
+          storage and synchronization for application data.
+          FINVERO's Firestore security architecture is designed to
+          isolate user records according to authenticated ownership.
+        </p>
+
+      </div>
+
+      <div class="service-card">
+
+        <strong>
+          Firebase Cloud Messaging
+        </strong>
+
+        <p>
+          Where enabled, Firebase Cloud Messaging may be used to
+          deliver application notifications and relevant reminders
+          to supported devices.
+        </p>
+
+      </div>
+
+      <div class="service-card">
+
+        <strong>
+          Firebase Analytics
+        </strong>
+
+        <p>
+          Where enabled, Firebase Analytics may be used to understand
+          general application usage and improve product reliability
+          and usability. FINVERO does not intentionally send
+          unnecessary sensitive financial transaction details as
+          analytics events.
+        </p>
+
+      </div>
+
+      <div class="service-card">
+
+        <strong>
+          Firebase Crashlytics
+        </strong>
+
+        <p>
+          Where enabled, Crashlytics may process crash and diagnostic
+          information to help identify and resolve application
+          failures.
+        </p>
+
+      </div>
+
+      <div class="service-card">
+
+        <strong>
+          Firebase Performance Monitoring
+        </strong>
+
+        <p>
+          Where enabled, Performance Monitoring may collect technical
+          performance information to help identify slow or unreliable
+          application experiences.
+        </p>
+
+      </div>
+
+      <div class="not-used">
+
+        <p>
+          <strong>What We Do NOT Use:</strong>
+          FINVERO contains no third-party advertising SDKs,
+          no cross-site advertising trackers, and no sale or
+          leasing of financial data to data brokers, lenders,
+          or marketing partners.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- SECTION 4 -->
+    <section class="section">
+
+      <div class="section-number">04 · Security</div>
+
+      <h2>
+        Data Storage, Security & Isolation
+      </h2>
+
+      <h3>
+        Per-User Data Isolation
+      </h3>
+
+      <p>
+        FINVERO is designed around authenticated user ownership.
+        Financial records such as transactions, salary settings,
+        savings, debts, budgets, lending records, and recurring
+        payments are associated with the appropriate authenticated
+        user account.
+      </p>
+
+      <p>
+        Firestore Security Rules are designed to prevent unauthorized
+        users from reading, modifying, deleting, or overwriting
+        another user's documents.
+      </p>
+
+      <h3>
+        Encryption in Transit & at Rest
+      </h3>
+
+      <p>
+        FINVERO communicates with supported cloud services through
+        encrypted network connections using HTTPS/TLS.
+      </p>
+
+      <p>
+        Data stored through Google Cloud/Firebase infrastructure is
+        protected using Google's standard security and encryption
+        mechanisms for data at rest.
+      </p>
+
+      <h3>
+        Offline Data
+      </h3>
+
+      <p>
+        Where offline functionality is supported, FINVERO may
+        temporarily retain locally cached or pending synchronization
+        information on the device so that supported actions can
+        continue without an active internet connection.
+      </p>
+
+      <h3>
+        Security Realism
+      </h3>
+
+      <p>
+        FINVERO applies reasonable security practices involving
+        authentication, authorization, database rules, encrypted
+        communications, and supported cloud security controls.
+        However, no electronic transmission, application, device,
+        or cloud storage method can be guaranteed to be 100%
+        impenetrable.
+      </p>
+
+      <p>
+        Users are responsible for maintaining secure login
+        credentials and protecting access to their devices and
+        accounts.
+      </p>
+
+    </section>
+
+
+    <!-- SECTION 5 -->
+    <section class="section">
+
+      <div class="section-number">05 · Data Control</div>
+
+      <h2>
+        Data Portability, Retention & Deletion
+      </h2>
+
+      <p>
+        FINVERO is designed to give users meaningful control over
+        the financial information they enter into the application.
+      </p>
+
+      <h3>
+        Data Export
+      </h3>
+
+      <p>
+        Where the export feature is available, users can export
+        supported transaction information to CSV format for their
+        own records and personal use.
+      </p>
+
+      <h3>
+        Clear Financial Data
+      </h3>
+
+      <p>
+        Where supported by the application, users can clear or reset
+        their financial records without necessarily removing their
+        authentication account.
+      </p>
+
+      <h3>
+        Data Retention
+      </h3>
+
+      <p>
+        Financial and account-related information may be retained
+        for as long as necessary to provide the requested services,
+        maintain application functionality, support synchronization,
+        protect the Service, prevent abuse, resolve technical or
+        operational issues, and satisfy applicable legal requirements.
+      </p>
+
+      <h3>
+        Data Deletion Requests
+      </h3>
+
+      <p>
+        FINVERO does not currently provide an in-app permanent
+        account-deletion mechanism. If you have a question about
+        your personal information or wish to request assistance
+        regarding applicable data deletion rights, please contact
+        KX Technologies using the official support email provided
+        below.
+      </p>
+
+    </section>
+
+
+    <!-- SECTION 6 -->
+    <section class="section">
+
+      <div class="section-number">06 · Children</div>
+
+      <h2>
+        Children's Privacy
+      </h2>
+
+      <p>
+        FINVERO is designed as a general personal finance management
+        application.
+      </p>
+
+      <p>
+        We do not knowingly design FINVERO to solicit personal
+        information from children in violation of applicable
+        privacy laws.
+      </p>
+
+      <p>
+        If you believe that a child or minor has provided personal
+        information in circumstances where such collection is not
+        permitted by applicable law, please contact us so that the
+        matter can be reviewed and appropriate action can be taken.
+      </p>
+
+    </section>
+
+
+    <!-- SECTION 7 -->
+    <section class="section">
+
+      <div class="section-number">07 · Updates</div>
+
+      <h2>
+        Updates to This Policy
+      </h2>
+
+      <p>
+        We may periodically update this Privacy Policy to reflect
+        changes in FINVERO's features, technology, data practices,
+        security architecture, or applicable regulatory requirements.
+      </p>
+
+      <p>
+        When this policy is updated, the
+        <strong>Last Updated</strong> date will be revised accordingly.
+        Significant changes may also be communicated within the
+        application where appropriate.
+      </p>
+
+      <p>
+        Continued use of FINVERO after an updated policy becomes
+        effective indicates acknowledgment of the updated policy,
+        subject to applicable law.
+      </p>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="section">
+
+      <div class="section-number">Questions & Inquiries</div>
+
+      <h2>
+        Contact Us
+      </h2>
+
+      <p>
+        If you have questions regarding this Privacy Policy,
+        your data rights, data handling, or data deletion requests,
+        you can contact the FINVERO team directly.
+      </p>
+
+      <div class="contact-box">
+
+        <div class="contact-row">
+          <strong>Developer:</strong>
+          KX Technologies
+        </div>
+
+        <div class="contact-row">
+          <strong>Product:</strong>
+          FINVERO (v1.0.0)
+        </div>
+
+        <div class="contact-row">
+          <strong>Official Support Email:</strong>
+          <a href="mailto:skousik833@gmail.com">
+            skousik833@gmail.com
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-brand">
+      FINVERO
+    </div>
+
+    <div>
+      SMARTER MONEY. BETTER LIFE.
+    </div>
+
+    <div class="footer-links">
+      <a href="#top">Privacy Policy</a>
+      <span>•</span>
+      <a href="#">Terms & Conditions</a>
+      <span>•</span>
+      <a href="#">About FINVERO</a>
+      <span>•</span>
+      <a href="#">Contact & Support</a>
+    </div>
+
+    <div>
+      Developed by KX Technologies
+    </div>
+
+    <div style="margin-top: 8px;">
+      © 2026 KX Technologies. All rights reserved.
+    </div>
+
+  </footer>
+
+</body>
+        </html>
